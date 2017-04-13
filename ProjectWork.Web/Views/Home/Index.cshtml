@@ -1,7 +1,32 @@
-﻿@section SPAViews {
-    @Html.Partial("_Home")
+﻿@{
+    Layout = null;
 }
-@section Scripts{
-    @Scripts.Render("~/bundles/knockout")
-    @Scripts.Render("~/bundles/app")
-}
+<!DOCTYPE html>
+<html ng-app="projectWork">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Cinema</title>
+     @Styles.Render("~/Content/css")
+     @Scripts.Render("~/bundles/modernizr")
+</head>
+<body ng-controller="rootCtrl">
+    <div>
+
+    </div>
+    @Scripts.Render("~/bundles/ThridParty")
+    @Scripts.Render("~/bundles/Application")
+</body>
+</html>
+
+
+
+
+@*@section SPAViews {
+        @Html.Partial("_Home")
+    }
+    @section Scripts{
+        @Scripts.Render("~/bundles/knockout")
+        @Scripts.Render("~/bundles/app")
+    }*@
+

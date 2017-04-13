@@ -36,35 +36,42 @@ namespace ProjectWork.Web
                 "~/Scripts/ThirdParty/angucomplete-alt.min.js",
                 "~/Scripts/ThirdParty/ui-bootstrap-tpls.js",
                 "~/Scripts/ThirdParty/underscore.js",
-                "~/Scripts/ThirdParty/raphael.js",
-                "~/Scripts/ThirdParty/morris.js",
+                //"~/Scripts/ThirdParty/raphael.js",
+                //"~/Scripts/ThirdParty/morris.js",
                 "~/Scripts/ThirdParty/jquery.fancybox.js",
                 "~/Scripts/ThirdParty/jquery.fancybox-media.js",
                 "~/Scripts/ThirdParty/loading-bar.js"));
 
 
+            bundles.Add(new ScriptBundle("~/bundles/Application").Include(
+                "~/Scripts/Application/Modules/common.core.js",
+                "~/Scripts/Application/Modules/common.ui.js",
+                "~/Scripts/Application/app.js"));
 
 
-            bundles.Add(new ScriptBundle("~/bundles/app").Include(
-                "~/Scripts/sammy-{version}.js",
-                "~/Scripts/app/common.js",
-                "~/Scripts/app/app.datamodel.js",
-                "~/Scripts/app/app.viewmodel.js",
-                "~/Scripts/app/home.viewmodel.js",
-                "~/Scripts/app/_run.js"));
+            //bundles.Add(new ScriptBundle("~/bundles/app").Include(
+            //    "~/Scripts/sammy-{version}.js",
+            //    "~/Scripts/app/common.js",
+            //    "~/Scripts/app/app.datamodel.js",
+            //    "~/Scripts/app/app.viewmodel.js",
+            //    "~/Scripts/app/home.viewmodel.js",
+            //    "~/Scripts/app/_run.js"));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
-            bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
-                "~/Scripts/modernizr-*"));
-
-            bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                "~/Scripts/bootstrap.js",
-                "~/Scripts/respond.js"));
+            bundles.Add(new ScriptBundle("~/bundles/ThirdParty/modernizr").Include(
+                "~/Scripts/ThirdParty/modernizr-*"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                 "~/Content/bootstrap.css",
-                 "~/Content/Site.css"));
+                "~/content/css/Site.css",
+                "~/content/css/bootstrap.css",
+                "~/content/css/bootstrap-theme.css",
+                "~/content/css/font-awesome.css",
+                //"~/content/css/morris.css",
+                "~/content/css/toastr.css",
+                "~/content/css/jquery.fancybox.css",
+                "~/content/css/loading-bar.css"));
+            BundleTable.EnableOptimizations = false;
         }
     }
 }
