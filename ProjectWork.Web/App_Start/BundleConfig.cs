@@ -10,10 +10,10 @@ namespace ProjectWork.Web
         // For more information on bundling, visit http://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
-            bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
+            bundles.Add(new ScriptBundle("~/bundles/ThirdParty").Include(
                 "~/Scripts/ThirdParty/jquery-{version}.js"));
 
-            bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
+            bundles.Add(new ScriptBundle("~/bundles/ThirdParty").Include(
                 "~/Scripts/jquery.unobtrusive*",
                 "~/Scripts/jquery.validate*"));
 
@@ -29,7 +29,7 @@ namespace ProjectWork.Web
                 //"~/Scripts/ThirdParty/respond.src.js",
                 "~/Scripts/ThirdParty/angular.js",
                 "~/Scripts/ThirdParty/angular-route.js",
-                "~/Scripts/ThirdParty/angular-cookies.js",
+                "~/Scripts/ThirdParty/angular-cookies.min.js",
                 "~/Scripts/ThirdParty/angular-validator.js",
                 "~/Scripts/ThirdParty/angular-base64.js",
                 "~/Scripts/ThirdParty/angular-file-upload.js",
@@ -46,7 +46,17 @@ namespace ProjectWork.Web
             bundles.Add(new ScriptBundle("~/bundles/Application").Include(
                 "~/Scripts/Application/Modules/common.core.js",
                 "~/Scripts/Application/Modules/common.ui.js",
-                "~/Scripts/Application/app.js"));
+                "~/Scripts/Application/app.js",
+                "~/Scripts/Application/services/apiService.js",
+                "~/Scripts/Application/services/notificationService.js",
+                "~/Scripts/Application/services/membershipService.js",
+                "~/Scripts/Application/Layout/sideBar.directive.js",
+                "~/Scripts/Application/Layout/topBar.directive.js",
+                "~/Scripts/Application/home/rootCtrl.js",
+                "~/Scripts/Application/home/indexCtrl.js",
+                "~/Scripts/Application/account/loginCtrl.js",
+                "~/Scripts/Application/account/registerCtrl.js"
+                ));
 
 
             //bundles.Add(new ScriptBundle("~/bundles/app").Include(
