@@ -280,14 +280,43 @@
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Areas\HelpPage\Views\_ViewStart.cshtml" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\Site.css" />
+    <Content Include="Content\css\blank.gif" />
+    <Content Include="Content\css\bootstrap-theme.css" />
+    <Content Include="Content\css\bootstrap.css" />
+    <Content Include="Content\css\bootstrap.min.css" />
+    <Content Include="Content\css\fancybox_overlay.png" />
+    <Content Include="Content\css\fancybox_sprite.png" />
+    <Content Include="Content\css\font-awesome.css" />
+    <Content Include="Content\css\jquery.fancybox.css" />
+    <Content Include="Content\css\loading-bar.css" />
+    <Content Include="Content\css\morris.css" />
+    <Content Include="Content\css\Site.css" />
+    <Content Include="Content\css\toastr.css" />
+    <Content Include="Content\toastr.css" />
+    <Content Include="Content\toastr.min.css" />
+    <Content Include="Content\ui-bootstrap-csp.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\ThirdParty\angular-cookies.js" />
+    <Content Include="Scripts\ThirdParty\angular-cookies.min.js" />
+    <Content Include="Scripts\ThirdParty\angular-route.js" />
+    <Content Include="Scripts\ThirdParty\angular-route.min.js" />
+    <Content Include="Scripts\ThirdParty\angular-file-upload.js" />
+    <Content Include="Scripts\ThirdParty\angular-file-upload.min.js" />
+    <Content Include="Scripts\ThirdParty\angular-mocks.js" />
+    <Content Include="Scripts\ThirdParty\ui-bootstrap-tpls.js" />
+    <Content Include="Scripts\ThirdParty\ui-bootstrap-tpls.min.js" />
+    <Content Include="Scripts\ThirdParty\ui-bootstrap.js" />
+    <Content Include="Scripts\ThirdParty\ui-bootstrap.min.js" />
+    <Content Include="Scripts\ThirdParty\angular-validator.js" />
+    <Content Include="Scripts\ThirdParty\angular-validator.min.js" />
+    <Content Include="Scripts\ThirdParty\angular.js" />
+    <Content Include="Scripts\ThirdParty\angular.min.js" />
+    <Content Include="Scripts\ThirdParty\angucomplete-alt.min.js" />
+    <Content Include="Scripts\ThirdParty\angular-base64.js" />
+    <Content Include="Scripts\ThirdParty\bootstrap.js" />
+    <Content Include="Scripts\ThirdParty\bootstrap.min.js" />
     <Content Include="Areas\HelpPage\Views\Web.config" />
     <Content Include="Areas\HelpPage\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\ResourceModel.cshtml" />
@@ -310,18 +339,41 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\jquery-1.10.2.js" />
-    <Content Include="Scripts\jquery-1.10.2.min.js" />
-    <Content Include="Scripts\knockout-2.3.0.debug.js" />
-    <Content Include="Scripts\knockout-2.3.0.js" />
-    <Content Include="Scripts\knockout.validation.debug.js" />
-    <Content Include="Scripts\knockout.validation.js" />
-    <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Scripts\respond.js" />
-    <Content Include="Scripts\respond.min.js" />
-    <Content Include="Scripts\sammy-0.7.4.js" />
-    <Content Include="Scripts\sammy-0.7.4.min.js" />
+    <Content Include="Content\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\fonts\FontAwesome.otf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Scripts\ThirdParty\angular.min.js.map" />
+    <Content Include="Content\toastr.scss" />
+    <Content Include="Content\toastr.less" />
+    <Content Include="Scripts\ThirdParty\angular-file-upload.min.js.map" />
+    <Content Include="Scripts\ThirdParty\angular-file-upload.js.map" />
+    <Content Include="Scripts\ThirdParty\angular-route.min.js.map" />
+    <Content Include="Scripts\ThirdParty\angular-cookies.min.js.map" />
+    <None Include="Scripts\ThirdParty\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\ThirdParty\jquery-1.10.2.js" />
+    <Content Include="Scripts\ThirdParty\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\ThirdParty\jquery.fancybox-media.js" />
+    <Content Include="Scripts\ThirdParty\jquery.fancybox.js" />
+    <Content Include="Scripts\ThirdParty\jquery.raty.js" />
+    <Content Include="Scripts\ThirdParty\knockout-2.3.0.debug.js" />
+    <Content Include="Scripts\ThirdParty\knockout-2.3.0.js" />
+    <Content Include="Scripts\ThirdParty\knockout.validation.debug.js" />
+    <Content Include="Scripts\ThirdParty\knockout.validation.js" />
+    <Content Include="Scripts\ThirdParty\modernizr-2.6.2.js" />
+    <Content Include="Scripts\ThirdParty\respond.js" />
+    <Content Include="Scripts\ThirdParty\respond.min.js" />
+    <Content Include="Scripts\ThirdParty\sammy-0.7.4.js" />
+    <Content Include="Scripts\ThirdParty\sammy-0.7.4.min.js" />
+    <Content Include="Scripts\ThirdParty\toastr.js" />
+    <Content Include="Scripts\ThirdParty\toastr.min.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Scripts\app\_run.js" />
     <Content Include="Scripts\app\app.datamodel.js" />
@@ -368,6 +420,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\images\" />
+    <Folder Include="Scripts\Application\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -375,7 +429,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
-    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Scripts\ThirdParty\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ProjectWork.Data\ProjectWork.Data.csproj">
