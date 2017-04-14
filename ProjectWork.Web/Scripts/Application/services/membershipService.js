@@ -38,12 +38,12 @@
             };
 
             $http.defaults.headers.common['Authorization'] = 'Basic ' + membershipData;
-            //$cookieStore.put('repository', $rootScope.repository);
+            //$cookieStore.put('repository', $rootScope.repository);//bug3
         }
 
         function removeCredentials() {
             $rootScope.repository = {};
-            //$cookieStore.remove('repository');
+            //$cookieStore.remove('repository');//bug2
             $http.defaults.headers.common.Authorization = '';
         };
 
