@@ -1,8 +1,8 @@
 ﻿(function () {
     'use strict';
     angular.module('projectWork', ['common.core', 'common.ui']).config(config);
-    config.$inject = ['$routeProvider'];
-    function config($routeProvider) {
+    config.$inject = ['$routeProvider', '$locationProvider'];
+    function config($routeProvider, $locationProvider) {
         $routeProvider
         .when("/", {
             templateUrl: "Scripts/Application/home/index.html",
@@ -16,6 +16,11 @@
             templateUrl: "Scripts/Application/account/register.html",
                 controller: "registerCtrl"
         }).otherwise({ redirectTo: "/" });
+        $locationProvider.html5Mode({
+            enabled: true,
+            requireBase: true,
+            rewriteLinks: true
+        });
     }
 
 
@@ -29,19 +34,7 @@
         }
 
         $(document).ready(function () {
-            $(".fancybox").fancybox({
-                openEffect: 'none',
-                closeEffect: 'none'
-            });
-
-            $('.fancybox-media').fancybox({
-                openEffect: 'none',
-                closeEffect: 'none',
-                helpers: {
-                    media: {}
-                }
-            });
-
+           
             $('[data-toggle=offcanvas]').click(function () {
                 $('.row-offcanvas').toggleClass('active');
             });

@@ -7,7 +7,7 @@
         return {
             restrict: 'E',
             replace: true,
-            templateUrl: '/scripts/Application/layout/topBar.html'
+            templateUrl: 'scripts/Application/layout/topBar.html'
         }
     }
 
