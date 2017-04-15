@@ -10,12 +10,15 @@ namespace ProjectWork.Web
     {
         protected void Application_Start()
         {
+            //var config = GlobalConfiguration.Configuration;
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
+            //WebApiConfig.Register(config);
             Bootstrapper.Run();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            
         }
     }
 }

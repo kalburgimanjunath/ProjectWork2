@@ -16,7 +16,7 @@
         }
 
         function login(user, completed) {
-            apiService.post('/ProjectWork/api/account/authenticate', user,
+            apiService.post('/ProjectWork/api/Login/authenticate', user,
             completed,
             loginFailed);
         }
@@ -57,8 +57,14 @@
         }
 
         function isUserLoggedIn() {
-            //return $rootScope.repository.loggedUser != null;//bug1
-            return false;
+            debugger;
+            if ($rootScope.repository === undefined)
+            {
+                return false;
+            }
+            else
+            return $rootScope.repository.loggedUser != null;//bug1
+            
         }
 
         return service;
