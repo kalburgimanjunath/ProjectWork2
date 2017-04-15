@@ -3,9 +3,9 @@
 
     app.factory('membershipService', membershipService);
 
-    membershipService.$inject = ['apiService', 'notificationService', '$http', '$base64',  '$rootScope'];
+    membershipService.$inject = ['apiService', 'notificationService', '$cookieStore', '$http', '$base64', '$rootScope'];
 
-    function membershipService(apiService, notificationService, $http, $base64,  $rootScope) {
+    function membershipService(apiService, notificationService,$cookieStore, $http, $base64,  $rootScope) {
 
         var service = {
             login: login,
@@ -16,13 +16,13 @@
         }
 
         function login(user, completed) {
-            apiService.post('/api/account/authenticate', user,
+            apiService.post('/ProjectWork/api/account/authenticate', user,
             completed,
             loginFailed);
         }
 
         function register(user, completed) {
-            apiService.post('/api/account/register', user,
+            apiService.post('/ProjectWork/api/account/register', user,
             completed,
             registrationFailed);
         }
@@ -38,12 +38,12 @@
             };
 
             $http.defaults.headers.common['Authorization'] = 'Basic ' + membershipData;
-            //$cookieStore.put('repository', $rootScope.repository);//bug3
+            $cookieStore.put('repository', $rootScope.repository);//bug3
         }
 
         function removeCredentials() {
             $rootScope.repository = {};
-            //$cookieStore.remove('repository');//bug2
+            $cookieStore.remove('repository');//bug2
             $http.defaults.headers.common.Authorization = '';
         };
 
