@@ -91,6 +91,35 @@ namespace ProjectWork.Web.Controllers
             });
         }
 
-        
+        [AllowAnonymous]
+        [Route("authenticate")]
+        [HttpPost]
+        public HttpResponseMessage Authenticate(HttpRequestMessage request, LoginViewModel user)
+        {
+            return CreateHttpResponse(request, () =>
+            {
+                HttpResponseMessage response = null;
+                if (ModelState.IsValid)
+                {
+                    MembershipContext _userContext = _membershipService.ValidateUser(user.Username, user.Password);
+                    if (_userContext.User != null)
+                    {
+                        response = request.CreateResponse(HttpStatusCode.OK, new { success = true });
+                    }
+                    else
+                    {
+                        response = request.CreateResponse(HttpStatusCode.OK, new { success = false });
+                    }
+
+                }
+                else
+                {
+                    response = request.CreateResponse(HttpStatusCode.OK, new { success = false });
+                }
+
+                return response;
+            });
+        }
+
     }
 }
