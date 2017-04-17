@@ -12,12 +12,8 @@
                    validate-on="blur" required required-message="'Password is required'">
         </div>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-        <button class="loginBtn loginBtn--google">
-            Login with Google
-        </button>
-        <button class="loginBtn loginBtn--facebook btn-block">
-                Login with Facebook
-            </button>
+        <button class="loginBtn loginBtn--google btn-block" ng-click="externalLogin('google')">Login with Google</button>
+        <button class="loginBtn loginBtn--facebook btn-block" ng-click="externalLogin('facebook')">Login with Facebook</button>
         <div class="pull-right">
             <a ng-href="register" class="control-label">Register</a>
         </div>

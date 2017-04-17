@@ -11,9 +11,14 @@
         $scope.user = {};
 
         function login() {
+            debugger;
             membershipService.login($scope.user, loginCompleted)
         }
 
+        function externalLogin()
+        {
+
+        }
         function loginCompleted(result) {
             if (result.data.success) {
                 membershipService.saveCredentials($scope.user);

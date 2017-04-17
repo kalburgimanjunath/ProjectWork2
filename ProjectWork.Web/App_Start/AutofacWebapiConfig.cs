@@ -29,7 +29,7 @@ namespace ProjectWork.Web
         {
             builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
 
-            // EF HomeCinemaContext
+            // EF ProjectWorkContext
             builder.RegisterType<ProjectWorkContext>()
                    .As<DbContext>()
                    .InstancePerRequest();

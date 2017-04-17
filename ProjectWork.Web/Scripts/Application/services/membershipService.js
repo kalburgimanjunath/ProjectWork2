@@ -16,6 +16,7 @@
         }
 
         function login(user, completed) {
+            debugger;
             apiService.post('/ProjectWork/api/account/authenticate', user,
             completed,
             loginFailed);
