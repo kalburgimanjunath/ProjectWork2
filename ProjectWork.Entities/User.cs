@@ -19,7 +19,8 @@ namespace ProjectWork.Entities
         public string Salt { get; set; }
         public bool IsLocked { get; set; }
         public DateTime DateCreated { get; set; }
-
+        public bool IsEmailverified { get; set; }
+        public Guid EmailVerificationCode { get; set; }
         //Navigation Property
         //Gaurav-Navigation properties are typically defined as virtual so that they can take advantage of  certain Entity Framework functionality.
         public virtual ICollection<UserRole> UserRoles { get; set; }

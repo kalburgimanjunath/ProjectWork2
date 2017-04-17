@@ -56,13 +56,17 @@
     <Compile Include="Infrastructure\IDbFactory.cs" />
     <Compile Include="Infrastructure\IUnitOfWork.cs" />
     <Compile Include="Infrastructure\UnitOfWork.cs" />
-    <Compile Include="Migrations\201704120435432_initial_migration.cs" />
-    <Compile Include="Migrations\201704120435432_initial_migration.Designer.cs">
-      <DependentUpon>201704120435432_initial_migration.cs</DependentUpon>
+    <Compile Include="Migrations\201704170911005_initial_migration.cs" />
+    <Compile Include="Migrations\201704170911005_initial_migration.Designer.cs">
+      <DependentUpon>201704170911005_initial_migration.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201704151001257_initial_migration1.cs" />
-    <Compile Include="Migrations\201704151001257_initial_migration1.Designer.cs">
-      <DependentUpon>201704151001257_initial_migration1.cs</DependentUpon>
+    <Compile Include="Migrations\201704171247058_initial_migration1.cs" />
+    <Compile Include="Migrations\201704171247058_initial_migration1.Designer.cs">
+      <DependentUpon>201704171247058_initial_migration1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704171253120_initial_migration2.cs" />
+    <Compile Include="Migrations\201704171253120_initial_migration2.Designer.cs">
+      <DependentUpon>201704171253120_initial_migration2.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -81,11 +85,14 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201704120435432_initial_migration.resx">
-      <DependentUpon>201704120435432_initial_migration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201704170911005_initial_migration.resx">
+      <DependentUpon>201704170911005_initial_migration.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201704151001257_initial_migration1.resx">
-      <DependentUpon>201704151001257_initial_migration1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201704171247058_initial_migration1.resx">
+      <DependentUpon>201704171247058_initial_migration1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704171253120_initial_migration2.resx">
+      <DependentUpon>201704171253120_initial_migration2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

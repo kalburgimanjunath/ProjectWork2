@@ -18,6 +18,7 @@ namespace ProjectWork.Data
         void Add(T entity);
         void Delete(T entity);
         void Edit(T entity);
+
     }
 
 }

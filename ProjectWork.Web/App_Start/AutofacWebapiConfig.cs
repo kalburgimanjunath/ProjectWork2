@@ -55,6 +55,10 @@ namespace ProjectWork.Web
                 .As<IMembershipService>()
                 .InstancePerRequest();
 
+            builder.RegisterType<EmailSenderService>()
+                .As<IEmailSenderService>()
+                .InstancePerRequest();
+
             // Generic Data Repository Factory
             //builder.RegisterType<DataRepositoryFactory>()
             //    .As<IDataRepositoryFactory>().InstancePerRequest();

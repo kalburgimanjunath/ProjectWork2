@@ -41,6 +41,7 @@ namespace ProjectWork.Data.Migrations
                         Salt = c.String(nullable: false, maxLength: 200),
                         IsLocked = c.Boolean(nullable: false),
                         DateCreated = c.DateTime(nullable: false),
+                        IsEmailverified = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.ID);
             

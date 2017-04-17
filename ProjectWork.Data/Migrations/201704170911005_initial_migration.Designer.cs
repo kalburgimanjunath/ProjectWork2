@@ -13,7 +13,7 @@ namespace ProjectWork.Data.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201704120435432_initial_migration"; }
+            get { return "201704170911005_initial_migration"; }
         }
         
         string IMigrationMetadata.Source

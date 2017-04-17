@@ -17,7 +17,8 @@ namespace ProjectWork.Data
             Property(u => u.Salt).IsRequired().HasMaxLength(200);
             Property(u => u.IsLocked).IsRequired();
             Property(u => u.DateCreated);
-        
+            Property(u => u.IsEmailverified).IsRequired();
+            Property(u => u.EmailVerificationCode).IsRequired();
            }
     }
 }

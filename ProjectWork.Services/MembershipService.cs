@@ -18,6 +18,7 @@ namespace ProjectWork.Services
         private readonly IEntityBaseRepository<UserRole> _userRoleRepository;
         private readonly IEncryptionService _encryptionService;
         private readonly IUnitOfWork _unitOfWork;
+        private readonly IEmailSenderService _emailSenderService;
         #endregion
         public MembershipService(IEntityBaseRepository<User> userRepository, IEntityBaseRepository<Role> roleRepository, IEntityBaseRepository<UserRole> userRoleRepository, IEncryptionService encryptionService, IUnitOfWork unitOfWork)
         {
@@ -26,6 +27,7 @@ namespace ProjectWork.Services
             _userRoleRepository = userRoleRepository;
             _encryptionService = encryptionService;
             _unitOfWork = unitOfWork;
+           // _emailSenderService = emailSenderService;
         }
 
         #region Helper methods
@@ -64,11 +66,12 @@ namespace ProjectWork.Services
         }
         public User CreateUser(string username, string email, string password, int[] roles)
         {
-            var existingUser = _userRepository.GetSingleByUsername(username);
-
-            if (existingUser != null)
+            var existingUser = _userRepository.FindBy(x => x.Username == username).Any<User>(); ;
+            var existingEmailId = _userRepository.FindBy(x => x.Email == email).Any<User>();
+            //var existingEmailId=_userRepository.a
+            if (existingUser ||existingEmailId)
             {
-                throw new Exception("Username is already in use");
+                throw new Exception("Username Or Email ID is already in use");
             }
 
             var passwordSalt = _encryptionService.CreateSalt();
@@ -80,7 +83,8 @@ namespace ProjectWork.Services
                 Email = email,
                 IsLocked = false,
                 HashedPassword = _encryptionService.EncryptPassword(password, passwordSalt),
-                DateCreated = DateTime.Now
+                DateCreated = DateTime.Now,
+                EmailVerificationCode = Guid.NewGuid()
             };
 
             _userRepository.Add(user);

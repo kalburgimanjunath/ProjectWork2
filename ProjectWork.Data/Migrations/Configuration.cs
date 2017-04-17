@@ -27,7 +27,9 @@ namespace ProjectWork.Data.Migrations
                     HashedPassword ="XwAQoiq84p1RUzhAyPfaMDKVgSwnn80NCtsE8dNv3XI=",
                     Salt = "mNKLRbEFCH8y1xIyTXP4qA==",
                     IsLocked = false,
-                    DateCreated = DateTime.Now
+                    DateCreated = DateTime.Now,
+                    IsEmailverified=true,
+                    EmailVerificationCode=Guid.NewGuid()
                 }
             });
 

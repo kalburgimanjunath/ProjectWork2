@@ -40,7 +40,11 @@ namespace ProjectWork.Web
                 //"~/Scripts/ThirdParty/morris.js",
                 "~/Scripts/ThirdParty/jquery.fancybox.js",
                 "~/Scripts/ThirdParty/jquery.fancybox-media.js",
-                "~/Scripts/ThirdParty/loading-bar.js"));
+                "~/Scripts/ThirdParty/loading-bar.js",
+                //"~/Scripts/OAuthComponents/auth0-lock/build/lock.js",
+                //"~/Scripts/OAuthComponents/angular-jwt/dist/angular-jwt.js",
+                //"~/Scripts/OAuthComponents/angular-lock/dist/angular-lock.js",
+                "~/Scripts/ThirdParty/platform.js"));
 
 
             bundles.Add(new ScriptBundle("~/bundles/Application").Include(

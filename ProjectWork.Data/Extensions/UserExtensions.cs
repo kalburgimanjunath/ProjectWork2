@@ -13,5 +13,11 @@ namespace ProjectWork.Data.Extensions
         {
             return userRepository.GetAll().FirstOrDefault(x => x.Username == username);
         }
+
+        public static User GetSingleByEmail(this IEntityBaseRepository<User> userRepository, string username,string email)
+        {
+            return userRepository.GetAll().FirstOrDefault(x => x.Email == email);
+        }
+
     }
 }

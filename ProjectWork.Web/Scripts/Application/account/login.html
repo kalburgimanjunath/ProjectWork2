@@ -2,7 +2,7 @@
     <form class="form-signin" role="form" novalidate angular-validator name="userLoginForm" angular-validator-submit="login()">
         <h3 class="form-signin-heading">Sign in</h3>
         <div class="form-group">
-            <label for="inputUsername" class="sr-only">Username</label>
+            <label for="inputUsername" class="sr-only">Username/Email</label>
             <input type="text" id="inputUsername" name="inputUsername" class="form-control" ng-model="user.username" placeholder="Username"
                    validate-on="blur" required required-message="'Username is required'">
         </div>
@@ -11,11 +11,22 @@
             <input type="password" id="inputPassword" name="inputPassword" class="form-control" ng-model="user.password" placeholder="Password"
                    validate-on="blur" required required-message="'Password is required'">
         </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-        <button class="loginBtn loginBtn--google btn-block" ng-click="externalLogin('google')">Login with Google</button>
-        <button class="loginBtn loginBtn--facebook btn-block" ng-click="externalLogin('facebook')">Login with Facebook</button>
-        <div class="pull-right">
+      
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+           
+        <<div class="pull-right">
             <a ng-href="register" class="control-label">Register</a>
         </div>
     </form>
+    
+    
+    <!--<button class="loginBtn loginBtn--google btn-block" ng-click="">Sign with Google</button>
+    <button class="loginBtn loginBtn--facebook btn-block" ng-click=""> with Facebook</button>-->
+</div>
+<div class="socialLoginDiv">
+    <span>
+        <button class="loginBtn loginBtn--google btn-block" >Login with Google</button>
+        <button class="loginBtn loginBtn--facebook btn-block" ng-click="">Login with Facebook</button>
+    </span>
+
 </div>

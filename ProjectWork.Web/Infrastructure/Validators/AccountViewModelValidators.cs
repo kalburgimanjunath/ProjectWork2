@@ -21,9 +21,13 @@ namespace ProjectWork.Web.Infrastructure.Validators
     {
         public RegisterViewModelValidators()
         {
-            RuleFor(login => login.Username).NotEmpty().WithMessage("Invalid username");
-            RuleFor(login => login.Password).NotEmpty().WithMessage("Invalid password");
+            //RuleFor(login => login.Username).NotEmpty().Length(6,25).Must(login=>!login.All(c=>char.IsWhiteSpace(c))).WithMessage("Invalid username. Usernames must be of length 6 to 25, and no white space character is alllowed.");
+            //RuleFor(login => login.Password).NotEmpty().Length(6, 15).WithMessage("Invalid password. Password must be of length 6 to 25");
+            //RuleFor(login => login.Email).NotEmpty().EmailAddress().Length(3, 30).WithMessage("Invalid email address");
+            RuleFor(login => login.Username).NotEmpty().WithMessage("Invalid username.");
+            RuleFor(login => login.Password).NotEmpty().WithMessage("Invalid password.");
             RuleFor(login => login.Email).NotEmpty().EmailAddress().WithMessage("Invalid email address");
+
         }
 
     }

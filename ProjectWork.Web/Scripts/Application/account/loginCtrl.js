@@ -9,16 +9,14 @@
         $scope.pageClass = 'page-login';
         $scope.login = login;
         $scope.user = {};
+        //$scope.auth = auth;
 
         function login() {
             debugger;
             membershipService.login($scope.user, loginCompleted)
         }
 
-        function externalLogin()
-        {
-
-        }
+    
         function loginCompleted(result) {
             if (result.data.success) {
                 membershipService.saveCredentials($scope.user);

@@ -44,6 +44,7 @@ namespace ProjectWork.Web.Infrastructure.Core
             catch (Exception ex)
             {
                 LogError(ex);
+                //throw ex;
                 response = request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
             }
 

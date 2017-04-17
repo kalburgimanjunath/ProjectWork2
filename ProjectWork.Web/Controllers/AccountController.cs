@@ -24,43 +24,15 @@ namespace ProjectWork.Web.Controllers
     public class AccountController : ApiControllerBase
     {
         private readonly IMembershipService _membershipService;
-
-        public AccountController(IMembershipService membershipService, IEntityBaseRepository<Error> _errorsRepository,IUnitOfWork _unitOfWork)
+        private readonly IEmailSenderService _emailSenderService;
+        public AccountController(IMembershipService membershipService, IEntityBaseRepository<Error> _errorsRepository,IUnitOfWork _unitOfWork,IEmailSenderService emailSenderService)
             :base(_errorsRepository,_unitOfWork)
         {
             _membershipService = membershipService;
+            _emailSenderService = emailSenderService;
         }
 
-        //[AllowAnonymous]
-        //[Route("authenticate")]
-        //[HttpPost]
-        //public HttpResponseMessage Login(HttpRequestMessage request, LoginViewModel user)
-        //{
-        //    return CreateHttpResponse(request, () =>
-        //    {
-        //        HttpResponseMessage response = null;
-        //        if (ModelState.IsValid)
-        //        {
-        //            MembershipContext _userContext = _membershipService.ValidateUser(user.Username, user.Password);
-        //            if (_userContext.User != null)
-        //            {
-        //                response = request.CreateResponse(HttpStatusCode.OK, new { success = true });
-        //            }
-        //            else
-        //            {
-        //                response = request.CreateResponse(HttpStatusCode.OK, new { success = false });
-        //            }
-
-        //        }
-        //        else
-        //        {
-        //            response = request.CreateResponse(HttpStatusCode.OK, new { success = false });
-        //        }
-
-        //        return response;
-        //    });
-        //}
-
+       
         [AllowAnonymous]
         [Route("register")]
         [HttpPost]
@@ -79,6 +51,12 @@ namespace ProjectWork.Web.Controllers
 
                     if (_user != null)
                     {
+                        EmailMessage emailConfimationMessage = new EmailMessage();
+                        emailConfimationMessage.Subject = "Email Address verification";
+                        emailConfimationMessage.Body = @"http://localhost/ProjectWork/" + _user.EmailVerificationCode.ToString();
+                        emailConfimationMessage.Destination = user.Email;
+                        var emailSenderResult = _emailSenderService.sendMail(emailConfimationMessage);
+                       
                         response = request.CreateResponse(HttpStatusCode.OK, new { success = true });
                     }
                     else
