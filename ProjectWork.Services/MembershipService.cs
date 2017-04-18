@@ -125,6 +125,11 @@ namespace ProjectWork.Services
 
             return _result.Distinct().ToList();
         }
+
+        public bool ConfirmEmailAddress(string email, string validationCode)
+        {
+           var emailValidationStatus=_userRepository.FindBy
+        }
         #endregion
 
     }

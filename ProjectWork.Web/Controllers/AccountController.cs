@@ -99,5 +99,19 @@ namespace ProjectWork.Web.Controllers
             });
         }
 
+        [AllowAnonymous]
+        [HttpGet]
+        [Route("Confirmation/{id:string:min(36)}")]
+        public HttpRequestMessage GetConfirmation(HttpRequestMessage request, string id)
+        {
+            var result = CreateHttpResponse(request, () => {
+                HttpResponseMessage response = null;
+                MembershipContext _userContext=_membershipService.
+
+                return response;
+            });
+            return null;
+        }
+
     }
 }
