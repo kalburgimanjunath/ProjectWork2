@@ -53,7 +53,7 @@ namespace ProjectWork.Web.Controllers
                     {
                         EmailMessage emailConfimationMessage = new EmailMessage();
                         emailConfimationMessage.Subject = "Email Address verification";
-                        emailConfimationMessage.Body = @"http://localhost/ProjectWork/" + _user.EmailVerificationCode.ToString();
+                        emailConfimationMessage.Body = @"http://localhost/ProjectWork/Account/Confimation/" + _user.EmailVerificationCode.ToString();
                         emailConfimationMessage.Destination = user.Email;
                         var emailSenderResult = _emailSenderService.sendMail(emailConfimationMessage);
                        

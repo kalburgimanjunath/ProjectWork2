@@ -15,7 +15,7 @@
         .when("/register", {
             templateUrl: "Scripts/Application/account/register.html",
                 controller: "registerCtrl"
-        }).otherwise({ redirectTo: "/" });
+        }).otherwise({ redirectTo: "ProjectWork/" });
         $locationProvider.html5Mode({
             enabled: true,
             requireBase: true,

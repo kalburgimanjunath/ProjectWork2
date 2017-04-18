@@ -28,7 +28,7 @@ namespace ProjectWork.Services
             msg.AlternateViews.Add(AlternateView.CreateAlternateViewFromString(text, null, MediaTypeNames.Text.Plain));
             //msg.AlternateViews.Add(AlternateView.CreateAlternateViewFromString(html, null, MediaTypeNames.Text.Html));
 
-            SmtpClient smtpClient = new SmtpClient("smtp-relay.gmail.com", Convert.ToInt32(25));
+            SmtpClient smtpClient = new SmtpClient("smtp.gmail.com", Convert.ToInt32(25));
             System.Net.NetworkCredential credentials = new System.Net.NetworkCredential("galibgaurav@gmail.com", "letsdoit@1234");
             smtpClient.Credentials = credentials;
             smtpClient.EnableSsl = false;
