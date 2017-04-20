@@ -1,0 +1,22 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ProjectWork Notification</title>
+</head>
+<body>
+    <div>
+        <div style="position:relative;margin:0 auto;margin-top:80px;max-width:400px">
+            @if (String.Equals(ViewBag.emailVerificationstatus, "true"))
+            {   <p>Successfully verified email address. Please click <a href="http://localhost/ProjectWork">here</a>  to go to login page.</p>}
+            else{ 
+            <p>Email address Verification Failed. Please try again or contact ProjectWork support team.</p>
+            }
+          
+        </div>
+    </div>
+</body>
+</html>

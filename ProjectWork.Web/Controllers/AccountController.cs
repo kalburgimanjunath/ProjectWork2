@@ -53,7 +53,8 @@ namespace ProjectWork.Web.Controllers
                     {
                         EmailMessage emailConfimationMessage = new EmailMessage();
                         emailConfimationMessage.Subject = "Email Address verification";
-                        emailConfimationMessage.Body = @"http://localhost/ProjectWork/Account/Confimation/" + _user.EmailVerificationCode.ToString();
+                        emailConfimationMessage.Body = String.Format("http://localhost/ProjectWork/Notification/Index?email={0}&validationCode={1}", _user.Email, _user.EmailVerificationCode);
+                        //emailConfimationMessage.Body = @"http://localhost/ProjectWork/Notification/Index?email" + _user.EmailVerificationCode.ToString();
                         emailConfimationMessage.Destination = user.Email;
                         var emailSenderResult = _emailSenderService.sendMail(emailConfimationMessage);
                        
@@ -99,18 +100,25 @@ namespace ProjectWork.Web.Controllers
             });
         }
 
-        [AllowAnonymous]
-        [HttpGet]
+        [AllowAnonymous]       
         [Route("Confirmation/{id:string:min(36)}")]
-        public HttpRequestMessage GetConfirmation(HttpRequestMessage request, string id)
+        public HttpResponseMessage GetConfirmation(HttpRequestMessage request, string email,string validationCode)
         {
-            var result = CreateHttpResponse(request, () => {
+            return CreateHttpResponse(request, () =>
+            {
                 HttpResponseMessage response = null;
-                MembershipContext _userContext=_membershipService.
-
+                var emailValidationStatus= _membershipService.ConfirmEmailAddress(email, validationCode);
+                if (emailValidationStatus)
+                {
+                    response = request.CreateResponse(HttpStatusCode.OK,true);
+                }
+                else
+                {
+                    response = request.CreateResponse(HttpStatusCode.OK, false);
+                }
                 return response;
             });
-            return null;
+          
         }
 
     }

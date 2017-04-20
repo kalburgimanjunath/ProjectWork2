@@ -10,7 +10,7 @@ using System.Security.Principal;
 
 namespace ProjectWork.Services
 {
-   public class MembershipService:IMembershipService
+    public class MembershipService : IMembershipService
     {
         #region Variables
         private readonly IEntityBaseRepository<User> _userRepository;
@@ -27,7 +27,7 @@ namespace ProjectWork.Services
             _userRoleRepository = userRoleRepository;
             _encryptionService = encryptionService;
             _unitOfWork = unitOfWork;
-           // _emailSenderService = emailSenderService;
+            // _emailSenderService = emailSenderService;
         }
 
         #region Helper methods
@@ -69,7 +69,7 @@ namespace ProjectWork.Services
             var existingUser = _userRepository.FindBy(x => x.Username == username).Any<User>(); ;
             var existingEmailId = _userRepository.FindBy(x => x.Email == email).Any<User>();
             //var existingEmailId=_userRepository.a
-            if (existingUser ||existingEmailId)
+            if (existingUser || existingEmailId)
             {
                 throw new Exception("Username Or Email ID is already in use");
             }
@@ -128,8 +128,16 @@ namespace ProjectWork.Services
 
         public bool ConfirmEmailAddress(string email, string validationCode)
         {
-           var emailValidationStatus=_userRepository.FindBy
-        }
+            var user = _userRepository.FindBy(x => x.Email == email).FirstOrDefault();
+            if (user != null)
+            {
+                 
+                return String.Equals(user.EmailVerificationCode.ToString().ToUpper(), validationCode);
+
+            }
+            else
+                return false;
+       }
         #endregion
 
     }

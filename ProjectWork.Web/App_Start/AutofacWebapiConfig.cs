@@ -9,7 +9,7 @@ using Autofac;
 using Autofac.Integration.WebApi;
 using ProjectWork.Data;
 using ProjectWork.Services;
-
+using ProjectWork.Web.Controllers;
 namespace ProjectWork.Web
 {
     public class AutofacWebapiConfig
@@ -58,7 +58,7 @@ namespace ProjectWork.Web
             builder.RegisterType<EmailSenderService>()
                 .As<IEmailSenderService>()
                 .InstancePerRequest();
-
+            
             // Generic Data Repository Factory
             //builder.RegisterType<DataRepositoryFactory>()
             //    .As<IDataRepositoryFactory>().InstancePerRequest();
